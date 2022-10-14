@@ -1,0 +1,15 @@
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\InTheDeep.exe
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\InTheDeep.deps.json
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\InTheDeep.runtimeconfig.json
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\InTheDeep.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\InTheDeep.pdb
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.csproj.AssemblyReference.cache
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.AssemblyInfoInputs.cache
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.AssemblyInfo.cs
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.csproj.CoreCompileInputs.cache
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.dll
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\refint\InTheDeep.dll
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.pdb
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.genruntimeconfig.cache
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\ref\InTheDeep.dll
