@@ -11,13 +11,12 @@ namespace InTheDeep
             int playerHp = 40;
             int enemyHp = random.Next(14, 26);
 
-            int playerAttack = random.Next(2, 8);
+            int playerAttack = random.Next(5, 8);
             int enemyAttack = random.Next(1, 7);
 
             int healAmount = random.Next(5, 7);
 
 
-            //Intro to adventure
             Console.WriteLine("While on a journey to find the Gintomony stone of ancient legend you have discovered a secret passage located " +
                               " in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try " +
                               " and sneak past or surprise it with the steel of a pickax you carry? 'fight' or 'flee': ");
@@ -42,10 +41,14 @@ namespace InTheDeep
                             enemyHp -= playerAttack;
                             Console.WriteLine("You attack your enemy and deal " + playerAttack + " damage");
                         }
-                        else
+                        if (choice == "h")
                         {
                             playerHp += healAmount;
                             Console.WriteLine("You heal " + healAmount + " health points!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Be confident and decide what you'll do!");
                         }
 
                         //Enemy Turn
@@ -58,21 +61,22 @@ namespace InTheDeep
                             if (enemyChoice == 0)
                             {
                                 playerHp -= enemyAttack;
-                                Console.WriteLine("Enemy attacks and deals " + enemyAttack + " damage!");
+                                Console.WriteLine("The enemy slashes and deals " + enemyAttack + " damage!");
                             }
                             else
                             {
                                 enemyHp += healAmount;
-                                Console.WriteLine("Enemy restores " + healAmount + " health points!");
+                                Console.WriteLine("The enemy restores " + healAmount + " health points!");
                             }
+
                         }
                     }
                 } while (playerHp > 0 && enemyHp > 0);
-
+ 
                 //Battle Synopsis
                 if (playerHp > 0)
                 {
-                    Console.WriteLine("Congratulations, you've defeated the enemy!");
+                    Console.WriteLine("Congratulations, you have slain your foe!");
                 }
                 else
                 {
@@ -123,12 +127,12 @@ namespace InTheDeep
                                 if (enemyChoice == 0)
                                 {
                                     playerHp -= enemyAttack;
-                                    Console.WriteLine("Enemy attacks and deals " + enemyAttack + " damage!");
+                                    Console.WriteLine("The enemy slashes and deals " + enemyAttack + " damage!");
                                 }
                                 else
                                 {
                                     enemyHp += healAmount;
-                                    Console.WriteLine("Enemy restores " + healAmount + " health points!");
+                                    Console.WriteLine("The enemy restores " + healAmount + " health points!");
                                 }
                             }
                         }
@@ -137,7 +141,7 @@ namespace InTheDeep
                     //Battle Synopsis
                     if (playerHp > 0)
                     {
-                        Console.WriteLine("Congratulations, you've defeated the enemy!");
+                        Console.WriteLine("Congratulations, you have slain your foe!");
                     }
                     else
                     {
@@ -147,7 +151,7 @@ namespace InTheDeep
                 }
             }
             Console.WriteLine("You manage to slay the beast, and now are torn between continuing the expedition, or heading home" +
-                                          "to the comfort of modern life. Which do you choose, 'continue' or 'return': ");
+                                          "to the comfort of modern life. Which do you choose, to 'continue' or 'return': ");
             Console.ReadLine();
         }
     }
