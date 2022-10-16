@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "R1eL69ITDROGmjBlFAx+P15ug8W62FMnRWCk6qKHr3uwd2bg3WZJ6KZLL2ZFm4taUjwbbcsvoDeJRm23WF/QsQ==",
+  "dgSpecHash": "K+tG1GEdX0mH+EUI6kjRk6he4zd25xhvzXDQ3TxBsAfO1nXbGdsS15EfwlyQ5i9FWtJai6VRTqDerznXTuGURg==",
   "success": true,
   "projectFilePath": "C:\\Users\\nick_\\OneDrive\\InTheDeep\\InTheDeep.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nick_\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\nick_\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\nick_\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

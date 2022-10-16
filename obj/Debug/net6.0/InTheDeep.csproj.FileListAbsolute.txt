@@ -13,3 +13,12 @@ C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\refint\InTheDeep.dll
 C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.pdb
 C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.genruntimeconfig.cache
 C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\ref\InTheDeep.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\133100__klankbeeld__horror-ambience-10.wav
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.csproj.CopyComplete

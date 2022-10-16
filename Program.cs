@@ -1,4 +1,6 @@
 ﻿using System.Text;
+using System.Media;
+using InTheDeep.Player.cs;
 
 namespace InTheDeep
 {
@@ -7,6 +9,15 @@ namespace InTheDeep
 
         static void Main(string[] args)
         {
+            //Spooky Music....!!Does not work on mac
+            if (OperatingSystem.IsWindows())
+            {
+                SoundPlayer spookyPlayer = new SoundPlayer("133100__klankbeeld__horror-ambience-10.wav");
+                spookyPlayer.Load();
+                spookyPlayer.PlayLooping();
+            }
+
+
             /*string playerName;
 
             Console.WriteLine("What's your name stranger?: ");
@@ -177,6 +188,7 @@ namespace InTheDeep
             Console.WriteLine(DateTime.Now);
             return 00;
         }
+
 
 
     }
