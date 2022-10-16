@@ -1,15 +1,47 @@
 ﻿using System.Text;
 using System.Media;
 using InTheDeep.Player.cs;
+using static System.Console;
 
 namespace InTheDeep
 {
     class Program
     {
 
+        //ASCCII
+
         static void Main(string[] args)
         {
-            //Spooky Music....!!Does not work on mac
+            WriteLine(@"             ,                                      ,
+                                    |\                                      /|
+                                 ,   \'._ ,                           ,  _.'/   ,
+                                 |\  {'. '-`\,      ,-._**_.-,      ,/`-' .'}  /|
+                                  \`'-'-.  '.`\      \*____*/      /`.'  .-'-'`/
+                                ,'-'-._  '.  ) )     /`    `\     ( (  .'  _.-'-',
+                                |\'- _ '.   , /     /  /""\  \     \ ,  .'  _ -'/|
+                                 \'-.   .  ; (      \_|^  ^|_/      ) ;   .  .-'/
+                                  `'--, . ;  {`-.      \__/      .-'}  ; . ,--'`
+                                  '--`_. ;  { ^  \    _|  |_    /  ^ }  ; ._`--'
+                                  `,_.--  ;  { ^  `-'`      `'-`  ^ }  ;  --._,`
+                                    ,_.-    ; {^    /        \    ^} ;    -._, 
+                                     ,_.-`), /\{^,/\\_'_/\_'_//\,^}/\ ,(`-._,
+                                       _.'.-` /.'   \        /   `.\ `-.'._
+                                      `  _.' `       \      /       ` '._   `
+                                                    .-'.  .'-.
+                                                  .'    `` ^  '.
+                                                 /  ^ ^   ^  ^  \
+                                                 | ^    ^   ^   |
+                                                /^   ^/    \  ^  \
+                                                \,_^_/    ^ \_,^./
+                                                 /=/  \^   /  \=\
+                                             __ /=/_   | ^|   _\=\ __
+                                           <(=,'=(==,) |  | (,==)=',=)>
+                                             /_/|_\    /  \    /_|\_\
+                                             `V (=|  .'    '.  |=) V`
+                                                 V  / _/  \_ \  V
+                                            jgs    ` ` \  / ` `
+                                                        \/");
+            //Spooky Music....!!Does not work on mac 𝆏🎵🎵🎵
             if (OperatingSystem.IsWindows())
             {
                 SoundPlayer spookyPlayer = new SoundPlayer("133100__klankbeeld__horror-ambience-10.wav");
@@ -27,7 +59,7 @@ namespace InTheDeep
             Console.WriteLine("Nice to make your acquaintance " + playerName + "Now let me recant what you told me in yer fever dream...ha ha ha.");
             */
 
-            //Intro to adventure---
+            //Intro to adventure--- 程 程 程
             Console.WriteLine("\t -While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located \t" +
                               " in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try " +
                               " and sneak past or surprise it with the steel of a pickax you carry? 'fight' or 'flee': \t");
@@ -43,7 +75,7 @@ namespace InTheDeep
                 Flee();
             }
 
-            //Continue the Journey?---
+            //Continue the Journey?--- 程
             Console.WriteLine("\t -You manage to handle one situation, and now are torn between continuing the expedition, or heading home " +
                                           "to the comfort of modern life. Which do you choose, to continue 'c' or return 'r': ");
             string journey = Console.ReadLine();
@@ -77,7 +109,7 @@ namespace InTheDeep
                 Console.WriteLine("You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
             }
 
-            //Clock method call---
+            //Clock method call--- 🕑
             Console.WriteLine("\t -To check your pocket watch press 'c': ");
             string watch = Console.ReadLine();
 
@@ -93,7 +125,7 @@ namespace InTheDeep
 
 
         }
-        //Battle Method---
+        //Battle Method--- ⚔⚔⚔
         static void Battle()
         {
             Random random = new Random();
@@ -110,9 +142,9 @@ namespace InTheDeep
 
             do
             {
-                //Fight Mechanic---
+                //Fight Mechanic--- ⚔🛡👹
                 {
-                    // Player Turn---
+                    // Player Turn--- 🛡
                     Console.WriteLine(" @Player Turn ");
                     Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
                     Console.WriteLine("Enter 'a' to attack or 'h' to heal");
@@ -131,7 +163,7 @@ namespace InTheDeep
                     }
 
 
-                    //Enemy Turn---
+                    //Enemy Turn--- 👹
                     if (enemyHp > 0)
                     {
                         Console.WriteLine(" @Enemy Turn  ");
@@ -153,7 +185,7 @@ namespace InTheDeep
                 }
             } while (playerHp > 0 && enemyHp > 0);
 
-            //Battle Summary---
+            //Battle Summary--- 🕮
             if (playerHp > 0)
             {
                 Console.WriteLine("Congratulations, you have slain your foe!");
@@ -167,7 +199,7 @@ namespace InTheDeep
         static void Flee()
         {
             Random random = new Random();
-            //Flee Mechanic---
+            //Flee Mechanic--- 🏃
             int flee = random.Next(0, 2);
 
             if (flee == 0)
@@ -182,7 +214,7 @@ namespace InTheDeep
             }
         }
 
-        //Current Time
+        //Current Time 🕑
         static decimal Clock()
         {
             Console.WriteLine(DateTime.Now);
