@@ -8,39 +8,39 @@ namespace InTheDeep
     class Program
     {
 
-        //ASCCII
+        //ASCCII INTRO
 
         static void Main(string[] args)
         {
-            WriteLine(@"             ,                                      ,
-                                    |\                                      /|
-                                 ,   \'._ ,                           ,  _.'/   ,
-                                 |\  {'. '-`\,      ,-._**_.-,      ,/`-' .'}  /|
-                                  \`'-'-.  '.`\      \*____*/      /`.'  .-'-'`/
-                                ,'-'-._  '.  ) )     /`    `\     ( (  .'  _.-'-',
-                                |\'- _ '.   , /     /  /""\  \     \ ,  .'  _ -'/|
-                                 \'-.   .  ; (      \_|^  ^|_/      ) ;   .  .-'/
-                                  `'--, . ;  {`-.      \__/      .-'}  ; . ,--'`
-                                  '--`_. ;  { ^  \    _|  |_    /  ^ }  ; ._`--'
-                                  `,_.--  ;  { ^  `-'`      `'-`  ^ }  ;  --._,`
-                                    ,_.-    ; {^    /        \    ^} ;    -._, 
-                                     ,_.-`), /\{^,/\\_'_/\_'_//\,^}/\ ,(`-._,
-                                       _.'.-` /.'   \        /   `.\ `-.'._
-                                      `  _.' `       \      /       ` '._   `
-                                                    .-'.  .'-.
-                                                  .'    `` ^  '.
-                                                 /  ^ ^   ^  ^  \
-                                                 | ^    ^   ^   |
-                                                /^   ^/    \  ^  \
-                                                \,_^_/    ^ \_,^./
-                                                 /=/  \^   /  \=\
-                                             __ /=/_   | ^|   _\=\ __
-                                           <(=,'=(==,) |  | (,==)=',=)>
-                                             /_/|_\    /  \    /_|\_\
-                                             `V (=|  .'    '.  |=) V`
-                                                 V  / _/  \_ \  V
-                                            jgs    ` ` \  / ` `
-                                                        \/");
+            WriteLine(@"                     ,                                      ,
+                                            |\                                      /|
+                                         ,   \'._ ,                           ,  _.'/   ,
+                                         |\  {'. '-`\,      ,-._**_.-,      ,/`-' .'}  /|
+                                          \`'-'-.  '.`\      \*____*/      /`.'  .-'-'`/
+                                        ,'-'-._  '.  ) )     /`    `\     ( (  .'  _.-'-',
+                                        |\'- _ '.   , /     /  /""\  \     \ ,  .'  _ -'/|
+                                         \'-.   .  ; (      \_|^  ^|_/      ) ;   .  .-'/
+                                          `'--, . ;  {`-.      \__/      .-'}  ; . ,--'`
+                                          '--`_. ;  { ^  \    _|  |_    /  ^ }  ; ._`--'
+                                          `,_.--  ;  { ^  `-'`      `'-`  ^ }  ;  --._,`
+                                            ,_.-    ; {^    /        \    ^} ;    -._, 
+                                              ,_.-`), /\{^,/\\__/\__//\,^}/\ ,(`-._,
+                                               _.'.-` /.'   \        /   `.\ `-.'._
+                                              `  _.' `       \      /       ` '._   `
+                                                            .-'.  .'-.
+                                                          .'    `` ^  '.
+                                                         /  ^ ^   ^  ^  \
+                                                         | ^    ^   ^   |
+                                                        /^   ^/    \  ^  \
+                                                        \,_^_/    ^ \_,^./
+                                                         /=/  \^   /  \=\
+                                                     __ /=/_   | ^|   _\=\ __
+                                                   <(=,'=(==,) |  | (,==)=',=)>
+                                                     /_/|_\    /  \    /_|\_\
+                                                     `V (=|  .'    '.  |=) V`
+                                                         V  / _/  \_ \  V
+                                                    jgs    ` ` \  / ` `
+                                                                \/");
             //Spooky Music....!!Does not work on mac 𝆏🎵🎵🎵
             if (OperatingSystem.IsWindows())
             {
@@ -60,9 +60,9 @@ namespace InTheDeep
             */
 
             //Intro to adventure--- 程 程 程
-            Console.WriteLine("\t -While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located \t" +
-                              " in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try " +
-                              " and sneak past or surprise it with the steel of a pickax you carry? 'fight' or 'flee': \t");
+            WriteLine("\t --While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located");
+            WriteLine("in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try ");
+            Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? 'fight' or 'flee': ");
             string battle = Console.ReadLine();
 
 
@@ -75,42 +75,69 @@ namespace InTheDeep
                 Flee();
             }
 
-            //Continue the Journey?--- 程
-            Console.WriteLine("\t -You manage to handle one situation, and now are torn between continuing the expedition, or heading home " +
-                                          "to the comfort of modern life. Which do you choose, to continue 'c' or return 'r': ");
+            //Continue the Journey?--- 程 程 程
+            WriteLine("\t --You manage to handle one situation, and now are torn between continuing the expedition, or heading home");
+            Console.WriteLine("to the comfort of modern life. Which do you choose, to continue 'c' or return 'r': ");
             string journey = Console.ReadLine();
 
             if (journey == "c")
             {
-                Console.WriteLine("\t -You proceed down the unknown and unforgiving path. The floor here transitions from coarse cave stone to " +
-                                  "carefully laid and engraved marble slabs. You spot a dais at the center of the room ahead. " +
-                                  "Atop the dais sits a small glittering jade colored stone. You advance your trembling legs with renewed " +
-                                  "vigor! Your dreams are within reach. Within a moment you stand at the pedestal, do you take the stone from " +
-                                  "it's stand? 'yes' or 'no'?: ");
+                WriteLine("\t --You proceed down the unknown and unforgiving path. The floor here transitions from coarse cave stone to ");
+                WriteLine("carefully laid and engraved marble slabs. You spot a dais at the center of the room ahead.");
+                WriteLine("Atop the dais sits a small glittering jade colored stone. You advance your trembling legs with renewed");
+                WriteLine("vigor! Your dreams are within reach. Within a moment you stand at the pedestal, do you take the stone from");
+                Console.WriteLine("it's stand? 'yes' or 'no'?: ");
 
                 string question = Console.ReadLine();
 
                 if (question == "yes")
                 {
-                    Console.WriteLine("\t -You hear a guttural bellow from behind you and turn to see a primordial beast " +
-                                  "with writhing limbs covered in a black metallic sheen and hear a voice, seemingly from nowhere saying " +
-                                  "'How dare thee mortal scum, so bold and brash to think ye worthy of such power! Prepare thyself for thy consequence... ");
-                    Battle();
+                    //Boss ASCII
+                    WriteLine(@"                                                   ,--,  ,.-..
+                                                                           ,\,     '-,-`,'-.' | ._
+                                                      /|           \    /   |\         }  )/  / `-,',
+                                                      [ ,          |\  /|   | |        /  \|  |/`  ,`
+                                                      | |       ,.`  `,` `, | |  _,...(   (      .',
+                                                      \  \  __ ,-` `  ,  , `/ |,'      Y     (   /_L\
+                                                       \  \_\,``,   ` , ,  /  |         )         _,/
+                                                        \  '  `  ,_ _`_,-,<._.<        /         /
+                                                         ', `>.,`  `  `   ,., |_      |         /
+                                                           \/`  `,   `   ,`  | /__,.-`    _,   `\
+                                                        ,-..\  _  \  `  /  ,  / `._) _,-\`       \
+                                                        \_,,.) /\    ` /  / ) (-,, ``    ,        |
+                                                       ,` )  | \_\       '-`  |  `(               \
+                                                      /  /```(   , --, ,' \   |`<`    ,            |
+                                                     /  /_,--`\   <\  V /> ,` )<_/)  | \      _____)
+                                               ,-, ,`   `   (_,\ \    |   /) / __/  /   `----`
+                                              (-, \           ) \ ('_.-._)/ /,`    /
+                                              | /  `          `/ \\ V   V, /`     /
+                                           ,--\(        ,     <_/`\\     ||      /
+                                          (   ,``-     \/|         \-A.A-`|     /
+                                         ,>,_ )_,..(    )\          -,,_-`  _--`
+                                        (_ \|`   _,/_  /  \_            ,--`
+                                         \( `   <.,../`     `-.._   _,-` ");
+
+                    WriteLine("\t --You hear a guttural bellow from behind you and turn to see a primordial beast!");
+                    WriteLine("with writhing limbs covered in a black metallic sheen and hear a voice, seemingly from nowhere saying");
+                    WriteLine("How dare thee mortal scum, so bold and brash to think ye worthy of such power! Prepare thyself for thy consequence...");
+                    BossBattle();
+
+                    WriteLine("\t --You've slain the protector of the stone and now stand to gain immortality! All that is left is to get it home...");
                 }
 
                 else
                 {
-                    Console.WriteLine("\t -You hear a voice, seemingly in your ears but with no direction saying, 'Smarter mortals than " +
+                    Console.WriteLine("\t --You hear a voice, seemingly in your ears but with no direction saying, 'Smarter mortals than " +
                                    "ye have sought this treasure, I deem ye wise enough to partake in it's use, if but for a moment. ");
                 }
             }
             else
             {
-                Console.WriteLine("You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
+                Console.WriteLine("\t --You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
             }
 
             //Clock method call--- 🕑
-            Console.WriteLine("\t -To check your pocket watch press 'c': ");
+            Console.WriteLine("\t --To check your pocket watch press 'c': ");
             string watch = Console.ReadLine();
 
             if (watch == "c")
@@ -144,8 +171,8 @@ namespace InTheDeep
             {
                 //Fight Mechanic--- ⚔🛡👹
                 {
-                    // Player Turn--- 🛡
-                    Console.WriteLine(" @Player Turn ");
+                    // Player Turn--- 🛡🛡🛡
+                    Console.WriteLine(" !!--@Player Turn--!! ");
                     Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
                     Console.WriteLine("Enter 'a' to attack or 'h' to heal");
 
@@ -154,61 +181,133 @@ namespace InTheDeep
                     if (choice == "a")
                     {
                         enemyHp -= playerAttack;
-                        Console.WriteLine("You attack your enemy and deal " + playerAttack + " damage");
+                        Console.WriteLine("\t --You attack your enemy and deal " + playerAttack + " damage");
                     }
                     if (choice == "h")
                     {
                         playerHp += healAmount;
-                        Console.WriteLine("You heal " + healAmount + " health points!");
+                        Console.WriteLine("\t --You heal " + healAmount + " health points!");
                     }
 
 
-                    //Enemy Turn--- 👹
+                    //Enemy Turn--- 👹👹👹
                     if (enemyHp > 0)
                     {
-                        Console.WriteLine(" @Enemy Turn  ");
+                        Console.WriteLine(" !!--@Enemy Turn--!!  ");
                         Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
                         int enemyChoice = random.Next(0, 2);
 
                         if (enemyChoice == 0)
                         {
                             playerHp -= enemyAttack;
-                            Console.WriteLine("The enemy slashes and deals " + enemyAttack + " damage!");
+                            Console.WriteLine("\t --The enemy slashes and deals " + enemyAttack + " damage!");
                         }
                         else
                         {
                             enemyHp += healAmount;
-                            Console.WriteLine("The enemy restores " + healAmount + " health points!");
+                            Console.WriteLine("\t --The enemy restores " + healAmount + " health points!");
                         }
 
                     }
                 }
             } while (playerHp > 0 && enemyHp > 0);
 
-            //Battle Summary--- 🕮
+            //Battle Summary--- 🕮🕮🕮🕮🕮
             if (playerHp > 0)
             {
-                Console.WriteLine("Congratulations, you have slain your foe!");
+                Console.WriteLine("\t --Congratulations, you have slain your foe!");
             }
             else
             {
-                Console.WriteLine("The enemy roars in victory and begins to feast on your flesh");
+                Console.WriteLine("\t --The enemy roars in victory and begins to feast on your flesh");
             }
         }
 
+        //Boss Battle Method ⚔⚔⚔⚔⚔⚔
+        static void BossBattle()
+        {
+            Random random = new Random();
+
+            int playerHp =45;
+
+            int enemyHp = random.Next(35, 60);
+
+            int playerAttack = random.Next(5, 8);
+
+            int enemyAttack = random.Next(2, 7);
+
+            int healAmount = random.Next(5, 7);
+
+            do
+            {
+                //Fight Mechanic--- ⚔🛡👹
+                {
+                    // Player Turn--- 🛡🛡🛡
+                    Console.WriteLine(" !!--@Player Turn--!! ");
+                    Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
+                    Console.WriteLine("Enter 'a' to attack or 'h' to heal");
+
+                    string choice = Console.ReadLine();
+
+                    if (choice == "a")
+                    {
+                        enemyHp -= playerAttack;
+                        Console.WriteLine("\t --You attack your enemy and deal " + playerAttack + " damage");
+                    }
+                    if (choice == "h")
+                    {
+                        playerHp += healAmount;
+                        Console.WriteLine("\t --You heal " + healAmount + " health points!");
+                    }
+
+
+                    //Enemy Turn--- 👹👹👹
+                    if (enemyHp > 0)
+                    {
+                        Console.WriteLine(" !!--@Enemy Turn--!!  ");
+                        Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
+                        int enemyChoice = random.Next(0, 2);
+
+                        if (enemyChoice == 0)
+                        {
+                            playerHp -= enemyAttack;
+                            Console.WriteLine("\t --The enemy slashes and deals " + enemyAttack + " damage!");
+                        }
+                        else
+                        {
+                            enemyHp += healAmount;
+                            Console.WriteLine("\t --The enemy restores " + healAmount + " health points!");
+                        }
+
+                    }
+                }
+            } while (playerHp > 0 && enemyHp > 0);
+
+            //Battle Summary--- 🕮🕮🕮🕮🕮
+            if (playerHp > 0)
+            {
+                Console.WriteLine("\t --Congratulations, you have slain your foe!");
+            }
+            else
+            {
+                Console.WriteLine("\t --The enemy roars in victory and begins to feast on your flesh");
+            }
+        }
+
+        //Flee Mechanic--- 🏃🏃🏃🏃🏃
         static void Flee()
         {
             Random random = new Random();
-            //Flee Mechanic--- 🏃
+
             int flee = random.Next(0, 2);
 
             if (flee == 0)
             {
-                Console.WriteLine("You manage to flee from the encounter!");
+                Console.WriteLine("\t --You manage to flee from the encounter!");
             }
             else
             {
-                Console.WriteLine("To late to run now, stand and deliver!");
+                Console.WriteLine("\t --To late to run now, stand and deliver!");
 
                 Battle();
             }
