@@ -7,7 +7,7 @@ using System.Net.NetworkInformation;
 using System.Xml;
 using Google.Apis.Services;
 using Google.Apis.Calendar.v3;
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace InTheDeep
 {
@@ -18,16 +18,15 @@ namespace InTheDeep
 
     static void Main(string[] args)
         {
-            WriteLine(@"
-                        _________ _         _________          _______    ______   _______  _______  _______ 
-                        \__   __/( (    /|  \__   __/|\     /|(  ____ \  (  __  \ (  ____ \(  ____ \(  ____ )
-                           ) (   |  \  ( |     ) (   | )   ( || (    \/  | (  \  )| (    \/| (    \/| (    )|
-                           | |   |   \ | |     | |   | (___) || (__      | |   ) || (__    | (__    | (____)|
-                           | |   | (\ \) |     | |   |  ___  ||  __)     | |   | ||  __)   |  __)   |  _____)
-                           | |   | | \   |     | |   | (   ) || (        | |   ) || (      | (      | (      
-                        ___) (___| )  \  |     | |   | )   ( || (____/\  | (__/  )| (____/\| (____/\| )      
-                        \_______/|/    )_)     )_(   |/     \|(_______/  (______/ (_______/(_______/|/                                
-                                           ,   ,
+            void Start()
+            {
+                Start();
+            }
+
+            //ASCCII INTRO
+
+            WriteLine(@"    
+                                            ,   ,
                                          ,-`{-`/
                                       ,-~ , \ {-~~-,
                                     ,~  ,   ,`,-~~-,`,
@@ -48,9 +47,9 @@ namespace InTheDeep
                                      / ` , ,`\.  ` ~  ,  ^ ,  `  ~ . . ``~~~`,                   `-`--, \
                                     / , ~ . ~ \ , ` .  ^  `  , . ^   .   , ` .`-,___,---,__            ``
                                   /` ` . ~ . ` `\ `  ~  ,  .  ,  `  ,  . ~  ^  ,  .  ~  , .`~---,___
-                                /` . `  ,  . ~ , \  `  ~  ,  .  ^  ,  ~  .  `  ,  ~  .  ^  ,  ~  .  `-,
+                                /` . `  ,  . ~ , \  `  ~  ,  .  ^  ,  ~  .  `  ,  ~  .  ^  ,  ~  .  `-,");
 
-                                                               -Daniel Hunt-");
+
             //Spooky Music....!!Does not work on mac 𝆏🎵🎵🎵
             if (OperatingSystem.IsWindows())
             {
@@ -176,7 +175,7 @@ namespace InTheDeep
                     WriteLine("\t --You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
                 }
 
-            //Clock method call--- 🕑
+            //Clock method call--- 🕑🕑🕑
             Console.WriteLine("\t --To check your pocket watch press 'c': ");
             string watch = Console.ReadLine();
 
@@ -366,14 +365,14 @@ namespace InTheDeep
             }
         }
 
-        //Current Time 🕑
+        //Current Time 🕑🕑🕑
         static decimal Clock()
         {
             Console.WriteLine(DateTime.Now);
             return 00;
         }
 
-        //Menu Class 🕮🕮🕮🕮🕮
+        //Menu Class 📝📝📝📝📝
         public class Menu
         {
             private int SelectedIndex;
@@ -387,9 +386,10 @@ namespace InTheDeep
                 SelectedIndex = 0;
             }
 
-            public void DisplayOptions()
+            // Menu Options & Display 📋📋📋
+            private void DisplayOptions()
             {
-                Console.WriteLine(Prompt);
+                WriteLine(Prompt);
                 for (int i = 0; i < Options.Length; i++)
                 {
                     string currentOption = Options[i];
@@ -398,54 +398,150 @@ namespace InTheDeep
                     if (i == SelectedIndex)
                     {
                         prefix = "*";
-                        //ForegroundColor = ConsoleColor.Black;
-                        //BackgroundColor = ConsoleColor.White;
+                        ForegroundColor = ConsoleColor.Black;
+                        BackgroundColor = ConsoleColor.White;
                     }
                     else
                     {
-                        prefix = "";
+                        prefix = " ";
+                        ForegroundColor = ConsoleColor.White;
+                        BackgroundColor = ConsoleColor.Black;
                     }
 
-                    Console.WriteLine($"{prefix} << {currentOption} >>");
+                    WriteLine($"{prefix} << {currentOption} >> ");
+                }
+                ResetColor();
+
+            }
+
+            //Menu Controller 📋🎮📋
+            public int Run()
+            {
+                ConsoleKey keyPressed;
+                do
+                {
+                    Clear();
+                    DisplayOptions();
+
+                    // Update selected index based on arrow keys
+
+                    ConsoleKeyInfo keyInfo = ReadKey(true);
+                    keyPressed = keyInfo.Key;
+
+                    if (keyPressed == ConsoleKey.UpArrow)
+                    {
+                        SelectedIndex--;
+                        if (SelectedIndex == -1)
+                        {
+                            SelectedIndex = Options.Length - 1;
+                        }
+                    }
+                    else if (keyPressed == ConsoleKey.DownArrow)
+                    {
+                        SelectedIndex++;
+                        if (SelectedIndex == Options.Length)
+                        {
+                            SelectedIndex = 0; 
+                        }
+                    }
+
+                } while (keyPressed != ConsoleKey.Enter);
+
+                return SelectedIndex;
+
+            }
+
+            //Start method DUH ▶🕑🏃
+            public void Start()
+            {
+                Title = "In The Deep!";
+                RunMainMenu();
+            }
+
+            //Menu Method 📋📋📋
+            private void RunMainMenu()
+            {
+                string prompt = @" _________ _         _________          _______    ______   _______  _______  _______ 
+                                   \__   __/( (    /|  \__   __/|\     /|(  ____ \  (  __  \ (  ____ \(  ____ \(  ____ )
+                                      ) (   |  \  ( |     ) (   | )   ( || (    \/  | (  \  )| (    \/| (    \/| (    )|
+                                      | |   |   \ | |     | |   | (___) || (__      | |   ) || (__    | (__    | (____)|
+                                      | |   | (\ \) |     | |   |  ___  ||  __)     | |   | ||  __)   |  __)   |  _____)
+                                      | |   | | \   |     | |   | (   ) || (        | |   ) || (      | (      | (      
+                                   ___) (___| )  \  |     | |   | )   ( || (____/\  | (__/  )| (____/\| (____/\| )      
+                                   \_______/|/    )_)     )_(   |/     \|(_______/  (______/ (_______/(_______/|/        
+                Welcome to your next adventure, what would you like to do?
+                (Use the arrow keys to cycle through options and press 'Enter' to select an option. )";
+                string[] options = { "Play", "About", "Exit" };
+                Menu mainMenu = new Menu(prompt, options);
+                int selectedIndex = mainMenu.Run();
+
+                switch (selectedIndex)
+                {
+                    case 0:
+                        RunFirstChoice();
+                        break;
+                    case 1:
+                        DisplayAboutInfo();
+                        break;
+                    case 2:
+                        ExitGame();
+                        break;
+                }
+            }
+
+            //Menu Options 📋📋📋
+            private void ExitGame()
+            {
+                WriteLine("\nPress any key to exit...");
+                ReadKey(true);
+                Environment.Exit(0);
+            }
+
+            private void DisplayAboutInfo()
+            {
+                Clear();
+                WriteLine("This game was created by Jeffery Sumner. ");
+                WriteLine("It uses ASCII art from https://www.asciiart.eu/ especially from -Daniel Hunt- whom the griffin, dragon and mtn are from! ");
+                WriteLine("This is a class project for Code Kentucky. ");
+                WriteLine("Press any key to return to the menu. ");
+                ReadKey(true);
+                RunMainMenu();
+            }
+
+            private void RunFirstChoice()
+            {
+                string prompt = "What archetypal class would you prefer?";
+                string[] options = {"Warrior", "Wizard", "Thief" };
+                Menu classMenu = new Menu(prompt, options);
+                int selectedIndex = classMenu.Run();
+
+                BackgroundColor = ConsoleColor.White;
+                switch (selectedIndex)
+                {
+                    case 0:
+                        ForegroundColor = ConsoleColor.Red;
+                        WriteLine("The Stout And Hearty Warrior!");
+                        break;
+                    case 1:
+                        ForegroundColor = ConsoleColor.Blue;
+                        WriteLine("The Wizened And Powerful Wizard!");
+                        break;
+                    case 2:
+                        ForegroundColor = ConsoleColor.Green;
+                        WriteLine("The Cunning And Swift Thief!");
+                        break;
                 }
 
+                ExitGame();
             }
 
         }
 
-        public void Start()
-        {
-            /*WriteLine("Welcome to your next adventure!");
-
-            ConsoleKeyInfo keyPressed = ReadKey();
-
-            if (keyPressed.Key == ConsoleKey.Enter)
-            {
-                WriteLine("You pressed enter");
-            }
-            else if (keyPressed.Key == ConsoleKey.UpArrow)
-            {
-                WriteLine("You pressed the up arrow");
-            }
-            else
-            {
-                WriteLine("You pressed another key");
-            }
-            */
-
-            string prompt = "Welcome to your new adventure, what would you like to do?";
-            string[] options = { "Play", "About", "Options" };
-            Menu mainMenu = new Menu(prompt, options);
-            mainMenu.DisplayOptions();
-            WriteLine("Press any key to exit....");
-            ReadKey(true);
-        }
-
-        //Moon Phases Calendar ☾🌕☽
+        //Moon Phases Calendar ☾🌕☽📅
         public static void MoonCalendar()
         {
-
-            const string ApiKey = "";
+            //Place API Key here...\/
+            const string ApiKey = "  ";
             const string CalenderId = "ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com";
 
             static async Task Calender(string[] args)
@@ -455,7 +551,7 @@ namespace InTheDeep
                 var service = new CalendarService(new BaseClientService.Initializer()
                 {
                     ApiKey = ApiKey,
-                    ApplicationName = "Api key"
+                    ApplicationName = "API key"
                 });
 
                 var request = service.Events.List(CalenderId);
@@ -469,9 +565,5 @@ namespace InTheDeep
 
     }
 
-
-
-
-    //
-    //ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com
+    //ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com (Calendar address)
 }
