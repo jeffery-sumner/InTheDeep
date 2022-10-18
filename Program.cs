@@ -2,17 +2,84 @@
 using System.Media;
 using InTheDeep.Player.cs;
 using static System.Console;
+using System.Threading.Tasks;
+using System.Net.NetworkInformation;
+using System.Xml;
+using Google.Apis.Services;
+using Google.Apis.Calendar.v3;
+
 
 namespace InTheDeep
 {
     class Program
     {
+        
+    //ASCCII INTRO
 
-        //ASCCII INTRO
-
-        static void Main(string[] args)
+    static void Main(string[] args)
         {
-            WriteLine(@"                     ,                                      ,
+            WriteLine(@"
+                        _________ _         _________          _______    ______   _______  _______  _______ 
+                        \__   __/( (    /|  \__   __/|\     /|(  ____ \  (  __  \ (  ____ \(  ____ \(  ____ )
+                           ) (   |  \  ( |     ) (   | )   ( || (    \/  | (  \  )| (    \/| (    \/| (    )|
+                           | |   |   \ | |     | |   | (___) || (__      | |   ) || (__    | (__    | (____)|
+                           | |   | (\ \) |     | |   |  ___  ||  __)     | |   | ||  __)   |  __)   |  _____)
+                           | |   | | \   |     | |   | (   ) || (        | |   ) || (      | (      | (      
+                        ___) (___| )  \  |     | |   | )   ( || (____/\  | (__/  )| (____/\| (____/\| )      
+                        \_______/|/    )_)     )_(   |/     \|(_______/  (______/ (_______/(_______/|/                                
+                                           ,   ,
+                                         ,-`{-`/
+                                      ,-~ , \ {-~~-,
+                                    ,~  ,   ,`,-~~-,`,
+                                  ,`   ,   { {      } }                                             }/
+                                 ;     ,--/`\ \    / /                                     }/      /,/
+                                ;  ,-./      \ \  { {  (                                  /,;    ,/ ,/
+                                ; /   `       } } `, `-`-.___                            / `,  ,/  `,/
+                                 \|         ,`,`    `~.___,---}                         / ,`,,/  ,`,;
+                                  `        { {                                     __  /  ,`/   ,`,;
+                                        /   \ \                                 _,`, `{  `,{   `,`;`
+                                       {     } }       /~\         .-:::-.     (--,   ;\ `,}  `,`;
+                                       \\._./ /      /` , \      ,:::::::::,     `~;   \},/  `,`;     ,-=-
+                                        `-..-`      /. `  .\_   ;:::::::::::;  __,{     `/  `,`;     {
+                                                   / , ~ . ^ `~`\:::::::::::<<~>-,,`,    `-,  ``,_    }
+                                                /~~ . `  . ~  , .`~~\:::::::;    _-~  ;__,        `,-`
+                                       /`\    /~,  . ~ , '  `  ,  .` \::::;`   <<<~```   ``-,,__   ;
+                                      /` .`\ /` .  ^  ,  ~  ,  . ` . ~\~                       \\, `,__
+                                     / ` , ,`\.  ` ~  ,  ^ ,  `  ~ . . ``~~~`,                   `-`--, \
+                                    / , ~ . ~ \ , ` .  ^  `  , . ^   .   , ` .`-,___,---,__            ``
+                                  /` ` . ~ . ` `\ `  ~  ,  .  ,  `  ,  . ~  ^  ,  .  ~  , .`~---,___
+                                /` . `  ,  . ~ , \  `  ~  ,  .  ^  ,  ~  .  `  ,  ~  .  ^  ,  ~  .  `-,
+
+                                                               -Daniel Hunt-");
+            //Spooky Music....!!Does not work on mac 𝆏🎵🎵🎵
+            if (OperatingSystem.IsWindows())
+            {
+                SoundPlayer spookyPlayer = new SoundPlayer("133100__klankbeeld__horror-ambience-10.wav");
+                spookyPlayer.Load();
+                spookyPlayer.PlayLooping();
+            }
+
+
+            /*string playerName;
+
+            Console.WriteLine("What's your name stranger?: ");
+
+            playerName = Console.ReadLine();
+
+            Console.WriteLine("Nice to make your acquaintance " + playerName + "Now let me recant what you told me in yer fever dream...ha ha ha.");
+            */
+
+            //Intro to adventure--- 程 程 程
+            WriteLine("\t --While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located");
+            WriteLine("in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try ");
+            Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? 'fight' or 'flee': ");
+            string battle = Console.ReadLine();
+
+
+            if (battle == "fight")
+            {
+                //ASCII First Monster
+                WriteLine(@"                     ,                                      ,
                                             |\                                      /|
                                          ,   \'._ ,                           ,  _.'/   ,
                                          |\  {'. '-`\,      ,-._**_.-,      ,/`-' .'}  /|
@@ -41,33 +108,6 @@ namespace InTheDeep
                                                          V  / _/  \_ \  V
                                                     jgs    ` ` \  / ` `
                                                                 \/");
-            //Spooky Music....!!Does not work on mac 𝆏🎵🎵🎵
-            if (OperatingSystem.IsWindows())
-            {
-                SoundPlayer spookyPlayer = new SoundPlayer("133100__klankbeeld__horror-ambience-10.wav");
-                spookyPlayer.Load();
-                spookyPlayer.PlayLooping();
-            }
-
-
-            /*string playerName;
-
-            Console.WriteLine("What's your name stranger?: ");
-
-            playerName = Console.ReadLine();
-
-            Console.WriteLine("Nice to make your acquaintance " + playerName + "Now let me recant what you told me in yer fever dream...ha ha ha.");
-            */
-
-            //Intro to adventure--- 程 程 程
-            WriteLine("\t --While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located");
-            WriteLine("in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try ");
-            Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? 'fight' or 'flee': ");
-            string battle = Console.ReadLine();
-
-
-            if (battle == "fight")
-            {
                 Battle();
             }
             else
@@ -127,14 +167,14 @@ namespace InTheDeep
 
                 else
                 {
-                    Console.WriteLine("\t --You hear a voice, seemingly in your ears but with no direction saying, 'Smarter mortals than " +
-                                   "ye have sought this treasure, I deem ye wise enough to partake in it's use, if but for a moment. ");
+                    WriteLine("\t --You hear a voice, seemingly in your ears but with no direction saying, 'Smarter mortals than ");
+                    WriteLine("ye have sought this treasure, I deem ye wise enough to partake in it's use, if but for a moment. ");
                 }
-            }
-            else
-            {
-                Console.WriteLine("\t --You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
-            }
+                }
+                else
+                {
+                    WriteLine("\t --You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
+                }
 
             //Clock method call--- 🕑
             Console.WriteLine("\t --To check your pocket watch press 'c': ");
@@ -143,6 +183,19 @@ namespace InTheDeep
             if (watch == "c")
             {
                 Clock();
+            }
+
+            else
+            {
+                Battle();
+            }
+
+            Console.WriteLine("\t --To check the moon phase press 'c': ");
+            string moon = Console.ReadLine();
+
+            if (moon == "c")
+            {
+                MoonCalendar();
             }
 
             else
@@ -320,7 +373,105 @@ namespace InTheDeep
             return 00;
         }
 
+        //Menu Class 🕮🕮🕮🕮🕮
+        public class Menu
+        {
+            private int SelectedIndex;
+            private string[] Options;
+            private string Prompt;
+
+            public Menu(string prompt, string[] options)
+            {
+                Prompt = prompt;
+                Options = options;
+                SelectedIndex = 0;
+            }
+
+            public void DisplayOptions()
+            {
+                Console.WriteLine(Prompt);
+                for (int i = 0; i < Options.Length; i++)
+                {
+                    string currentOption = Options[i];
+                    string prefix;
+
+                    if (i == SelectedIndex)
+                    {
+                        prefix = "*";
+                        //ForegroundColor = ConsoleColor.Black;
+                        //BackgroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        prefix = "";
+                    }
+
+                    Console.WriteLine($"{prefix} << {currentOption} >>");
+                }
+
+            }
+
+        }
+
+        public void Start()
+        {
+            /*WriteLine("Welcome to your next adventure!");
+
+            ConsoleKeyInfo keyPressed = ReadKey();
+
+            if (keyPressed.Key == ConsoleKey.Enter)
+            {
+                WriteLine("You pressed enter");
+            }
+            else if (keyPressed.Key == ConsoleKey.UpArrow)
+            {
+                WriteLine("You pressed the up arrow");
+            }
+            else
+            {
+                WriteLine("You pressed another key");
+            }
+            */
+
+            string prompt = "Welcome to your new adventure, what would you like to do?";
+            string[] options = { "Play", "About", "Options" };
+            Menu mainMenu = new Menu(prompt, options);
+            mainMenu.DisplayOptions();
+            WriteLine("Press any key to exit....");
+            ReadKey(true);
+        }
+
+        //Moon Phases Calendar ☾🌕☽
+        public static void MoonCalendar()
+        {
+
+            const string ApiKey = "AIzaSyDk678WMJ9j8OYzrLVGtd8Fmflb-z8v5iU";
+            const string CalenderId = "ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com";
+
+            static async Task Calender(string[] args)
+            {
+                Console.WriteLine();
+
+                var service = new CalendarService(new BaseClientService.Initializer()
+                {
+                    ApiKey = ApiKey,
+                    ApplicationName = "Api key"
+                });
+
+                var request = service.Events.List(CalenderId);
+                request.Fields = "items(summary, start,end)";
+                var response = await request.ExecuteAsync();
+
+            }
+        }
+
 
 
     }
+
+
+
+
+    //AIzaSyDk678WMJ9j8OYzrLVGtd8Fmflb-z8v5iU
+    //ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com
 }
