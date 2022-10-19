@@ -1,39 +1,90 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using static System.Console;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Console;
+using System;
+using System.Collections.Generic;
+
+
 namespace InTheDeep
 {
     internal class Game
     {
         public void Start()
         {
-            /*WriteLine("Welcome to your next adventure!");
+            Title = "In The Deep!";
+            RunMainMenu();
+        }
 
-            ConsoleKeyInfo keyPressed = ReadKey();
-
-            if (keyPressed.Key == ConsoleKey.Enter)
-            {
-                WriteLine("You pressed enter");
-            }
-            else if (keyPressed.Key == ConsoleKey.UpArrow)
-            {
-                WriteLine("You pressed the up arrow");
-            }
-            else
-            {
-                WriteLine("You pressed another key");
-            }
-            */
-
-            string prompt = "Welcome to your new adventure, what would you like to do?";
-            string[] options = { "Play", "About", "Options" };
+        private void RunMainMenu()
+        {
+            string prompt = @" 
+                      ██╗███╗   ██╗    ████████╗██╗  ██╗███████╗    ██████╗ ███████╗███████╗██████╗ 
+                      ██║████╗  ██║    ╚══██╔══╝██║  ██║██╔════╝    ██╔══██╗██╔════╝██╔════╝██╔══██╗
+                      ██║██╔██╗ ██║       ██║   ███████║█████╗      ██║  ██║█████╗  █████╗  ██████╔╝
+                      ██║██║╚██╗██║       ██║   ██╔══██║██╔══╝      ██║  ██║██╔══╝  ██╔══╝  ██╔═══╝ 
+                      ██║██║ ╚████║       ██║   ██║  ██║███████╗    ██████╔╝███████╗███████╗██║     
+                      ╚═╝╚═╝  ╚═══╝       ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚══════╝╚══════╝╚═╝    
+                              Welcome to your new adventure! What would you like to do?
+                 (Use the arrow keys to cycle through options and press 'Enter' to select an option)";
+            string[] options = { "Play", "About", "Exit" };
             Menu mainMenu = new Menu(prompt, options);
-            mainMenu.DisplayOptions();
-            WriteLine("Press any key to exit....");
+            int selectedIndex = mainMenu.Run();
+
+            switch (selectedIndex)
+            {
+                case 0:
+                    RunFirstChoice();
+                    break;
+                case 1:
+                    DisplayAboutInfo();
+                    break;
+                case 2:
+                    ExitGame();
+                    break;
+            }
+        }
+
+        private void ExitGame()
+        {
+            WriteLine("Press any key to exit");
             ReadKey(true);
+            Environment.Exit(0);
+        }
+
+        private void DisplayAboutInfo()
+        {
+            Clear();
+            WriteLine("This game was created by Jeffery Sumner. ");
+            WriteLine("It uses ASCII art from https://www.asciiart.eu/ especially from -Daniel Hunt- whom the griffin, dragon and mtn are from! ");
+            WriteLine("This is a class project for Code Kentucky. ");
+            WriteLine("Press any key to return to the menu. ");
+            ReadKey(true);
+            RunMainMenu();
+        }
+
+        private void RunFirstChoice()
+        {
+            string prompt = "What archetypal class would you prefer?";
+            string[] options = { "Warrior", "Wizard", "Thief" };
+            Menu classMenu = new Menu(prompt, options);
+            int selectedIndex = classMenu.Run();
+
+            BackgroundColor = ConsoleColor.Black;
+            switch (selectedIndex)
+            {
+                case 0:
+                    ForegroundColor = ConsoleColor.Red;
+                    WriteLine("\t The Stout And Hearty Warrior!");
+                    break;
+                case 1:
+                    ForegroundColor = ConsoleColor.Blue;
+                    WriteLine("\t The Wizened And Powerful Wizard!");
+                    break;
+                case 2:
+                    ForegroundColor = ConsoleColor.Green;
+                    WriteLine("\t The Cunning And Swift Thief!");
+                    break;
+            }
+            ReadLine();
         }
     }
 }

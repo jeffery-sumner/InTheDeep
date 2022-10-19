@@ -22,7 +22,6 @@ C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Syst
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\nick_\OneDrive\InTheDeep\obj\Debug\net6.0\InTheDeep.csproj.CopyComplete
-C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Menu.cs
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Google.Apis.dll
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Google.Apis.Auth.PlatformServices.dll
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Google.Apis.Auth.dll
@@ -30,3 +29,4 @@ C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Google.Apis.Calendar.v3.dll
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Google.Apis.Core.dll
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Google.Apis.NetworkServices.v1beta1.dll
 C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\nick_\OneDrive\InTheDeep\bin\Debug\net6.0\BattleMethod.cs
