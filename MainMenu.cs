@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace InTheDeep
 {
-    internal class Game
+    internal class MainMenu
     {
         public void Start()
         {
@@ -25,6 +25,7 @@ namespace InTheDeep
                       ╚═╝╚═╝  ╚═══╝       ╚═╝   ╚═╝  ╚═╝╚══════╝    ╚═════╝ ╚══════╝╚══════╝╚═╝    
                               Welcome to your new adventure! What would you like to do?
                  (Use the arrow keys to cycle through options and press 'Enter' to select an option)";
+
             string[] options = { "Play", "About", "Exit" };
             Menu mainMenu = new Menu(prompt, options);
             int selectedIndex = mainMenu.Run();
@@ -54,7 +55,7 @@ namespace InTheDeep
         {
             Clear();
             WriteLine("This game was created by Jeffery Sumner. ");
-            WriteLine("It uses ASCII art from https://www.asciiart.eu/ especially from -Daniel Hunt- whom the griffin, dragon and mtn are from! ");
+            WriteLine("It uses ASCII art from https://www.asciiart.eu/ , VK/cf, especially from -Daniel Hunt- whom the griffin, dragon and mtn are from! ");
             WriteLine("This is a class project for Code Kentucky. ");
             WriteLine("Press any key to return to the menu. ");
             ReadKey(true);

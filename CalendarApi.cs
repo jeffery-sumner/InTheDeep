@@ -12,7 +12,7 @@ namespace InTheDeep
         public static void MoonCalendar()
         {
             //Place API Key here...\/
-            const string ApiKey = "  ";
+            const string ApiKey = "";
             const string CalenderId = "ht3jlfaac5lfd6263ulfh4tql8@group.calendar.google.com";
 
             async Task Calender(string[] args)

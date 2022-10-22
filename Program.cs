@@ -14,43 +14,18 @@ namespace InTheDeep
     {
         static void Main(string[] args)
         {
-            Game myGame = new Game();
+            Title = "In The Deep";
+            CursorVisible = false;
+
+            MainMenu myGame = new MainMenu();
             myGame.Start();
 
-            //ASCCII INTRO
-            ForegroundColor = ConsoleColor.Red;
-            WriteLine(@"    
-                                            ,   ,
-                                         ,-`{-`/
-                                      ,-~ , \ {-~~-,
-                                    ,~  ,   ,`,-~~-,`,
-                                  ,`   ,   { {      } }                                             }/
-                                 ;     ,--/`\ \    / /                                     }/      /,/
-                                ;  ,-./      \ \  { {  (                                  /,;    ,/ ,/
-                                ; /   `       } } `, `-`-.___                            / `,  ,/  `,/
-                                 \|         ,`,`    `~.___,---}                         / ,`,,/  ,`,;
-                                  `        { {                                     __  /  ,`/   ,`,;
-                                        /   \ \                                 _,`, `{  `,{   `,`;`
-                                       {     } }       /~\         .-:::-.     (--,   ;\ `,}  `,`;
-                                       \\._./ /      /` , \      ,:::::::::,     `~;   \},/  `,`;     ,-=-
-                                        `-..-`      /. `  .\_   ;:::::::::::;  __,{     `/  `,`;     {
-                                                   / , ~ . ^ `~`\:::::::::::<<~>-,,`,    `-,  ``,_    }
-                                                /~~ . `  . ~  , .`~~\:::::::;    _-~  ;__,        `,-`
-                                       /`\    /~,  . ~ , '  `  ,  .` \::::;`   <<<~```   ``-,,__   ;
-                                      /` .`\ /` .  ^  ,  ~  ,  . ` . ~\~                       \\, `,__
-                                     / ` , ,`\.  ` ~  ,  ^ ,  `  ~ . . ``~~~`,                   `-`--, \
-                                    / , ~ . ~ \ , ` .  ^  `  , . ^   .   , ` .`-,___,---,__            ``
-                                  /` ` . ~ . ` `\ `  ~  ,  .  ,  `  ,  . ~  ^  ,  .  ~  , .`~---,___
-                                /` . `  ,  . ~ , \  `  ~  ,  .  ^  ,  ~  .  `  ,  ~  .  ^  ,  ~  .  `-,");
+            IntroArt.Intro();
 
             ResetColor();
+
             //Spooky Music....!!Does not work on mac 𝆏🎵🎵🎵
-            if (OperatingSystem.IsWindows())
-            {
-                SoundPlayer spookyPlayer = new SoundPlayer("133100__klankbeeld__horror-ambience-10.wav");
-                spookyPlayer.Load();
-                spookyPlayer.PlayLooping();
-            }
+            Music.BackGroundMusic();
 
 
             //Intro to adventure--- 程 程 程
@@ -62,39 +37,13 @@ namespace InTheDeep
 
             if (battle == "fight")
             {
-                //ASCII First Monster
-                ForegroundColor = ConsoleColor.Yellow;
-                WriteLine(@"                  ,                                      ,
-                                            |\                                      /|
-                                         ,   \'._ ,                           ,  _.'/   ,
-                                         |\  {'. '-`\,      ,-._**_.-,      ,/`-' .'}  /|
-                                          \`'-'-.  '.`\      \*____*/      /`.'  .-'-'`/
-                                        ,'-'-._  '.  ) )     /`    `\     ( (  .'  _.-'-',
-                                        |\'- _ '.   , /     /  /""\  \     \ ,  .'  _ -'/|
-                                         \'-.   .  ; (      \_|^  ^|_/      ) ;   .  .-'/
-                                          `'--, . ;  {`-.      \__/      .-'}  ; . ,--'`
-                                          '--`_. ;  { ^  \    _|  |_    /  ^ }  ; ._`--'
-                                          `,_.--  ;  { ^  `-'`      `'-`  ^ }  ;  --._,`
-                                            ,_.-    ; {^    /        \    ^} ;    -._, 
-                                              ,_.-`), /\{^,/\\__/\__//\,^}/\ ,(`-._,
-                                               _.'.-` /.'   \        /   `.\ `-.'._
-                                              `  _.' `       \      /       ` '._   `
-                                                            .-'.  .'-.
-                                                          .'    `` ^  '.
-                                                         /  ^ ^   ^  ^  \
-                                                         | ^    ^   ^   |
-                                                        /^   ^/    \  ^  \
-                                                        \,_^_/    ^ \_,^./
-                                                         /=/  \^   /  \=\
-                                                     __ /=/_   | ^|   _\=\ __
-                                                   <(=,'=(==,) |  | (,==)=',=)>
-                                                     /_/|_\    /  \    /_|\_\
-                                                     `V (=|  .'    '.  |=) V`
-                                                         V  / _/  \_ \  V
-                                                    jgs    ` ` \  / ` `
-                                                                \/");
+                MonsterMethod.Monsters();
+
                 ResetColor();
-                BattleMethod.Battle();
+
+                WarriorClass warriorClass = new WarriorClass();
+
+                warriorClass.Start();
             }
             else
             {
@@ -119,49 +68,28 @@ namespace InTheDeep
 
                 if (question == "yes")
                 {
-                    //Boss ASCII
-                    ForegroundColor = ConsoleColor.DarkRed;
-                    WriteLine(@"                                                   ,--,  ,.-..
-                                                                           ,\,     '-,-`,'-.' | ._
-                                                      /|           \    /   |\         }  )/  / `-,',
-                                                      [ ,          |\  /|   | |        /  \|  |/`  ,`
-                                                      | |       ,.`  `,` `, | |  _,...(   (      .',
-                                                      \  \  __ ,-` `  ,  , `/ |,'      Y     (   /_L\
-                                                       \  \_\,``,   ` , ,  /  |         )         _,/
-                                                        \  '  `  ,_ _`_,-,<._.<        /         /
-                                                         ', `>.,`  `  `   ,., |_      |         /
-                                                           \/`  `,   `   ,`  | /__,.-`    _,   `\
-                                                        ,-..\  _  \  `  /  ,  / `._) _,-\`       \
-                                                        \_,,.) /\    ` /  / ) (-,, ``    ,        |
-                                                       ,` )  | \_\       '-`  |  `(               \
-                                                      /  /```(   , --, ,' \   |`<`    ,            |
-                                                     /  /_,--`\   <\  V /> ,` )<_/)  | \      _____)
-                                               ,-, ,`   `   (_,\ \    |   /) / __/  /   `----`
-                                              (-, \           ) \ ('_.-._)/ /,`    /
-                                              | /  `          `/ \\ V   V, /`     /
-                                           ,--\(        ,     <_/`\\     ||      /
-                                          (   ,``-     \/|         \-A.A-`|     /
-                                         ,>,_ )_,..(    )\          -,,_-`  _--`
-                                        (_ \|`   _,/_  /  \_            ,--`
-                                         \( `   <.,../`     `-.._   _,-` ");
-
+                    BossMethod.Monsters();
+                    ResetColor();
                     WriteLine("\t --You hear a guttural bellow from behind you and turn to see a primordial beast!");
                     WriteLine("with writhing limbs covered in a black metallic sheen and hear a voice, seemingly from nowhere saying");
                     WriteLine("How dare thee mortal scum, so bold and brash to think ye worthy of such power! Prepare thyself for thy consequence...");
+                                        
                     BossBattleMethod.BossBattle();
-
-                    ResetColor();
+                    
+                    ForegroundColor = ConsoleColor.Yellow;
                     WriteLine("\t --You've slain the protector of the stone and now stand to gain immortality! All that is left is to get it home...");
                 }
 
                 else
                 {
+                    ForegroundColor = ConsoleColor.Yellow;
                     WriteLine("\t --You hear a voice, seemingly in your ears but with no direction saying, 'Smarter mortals than ");
                     WriteLine("ye have sought this treasure, I deem ye wise enough to partake in it's use, if but for a moment. ");
                 }
             }
             else
             {
+                ForegroundColor = ConsoleColor.White;
                 WriteLine("\t --You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
             }
 
@@ -171,6 +99,7 @@ namespace InTheDeep
 
             if (watch == "c")
             {
+                ForegroundColor = ConsoleColor.Yellow;
                 ClockMethod.Clock();
             }
 
@@ -184,6 +113,7 @@ namespace InTheDeep
 
             if (moon == "c")
             {
+                ForegroundColor = ConsoleColor.Cyan;
                 CalendarApi.MoonCalendar();
             }
 
@@ -191,10 +121,8 @@ namespace InTheDeep
             {
                 BattleMethod.Battle();
             }
-
         }
     }
-
 }
 
 

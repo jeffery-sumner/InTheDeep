@@ -5,6 +5,7 @@
         //Battle Method--- ⚔⚔⚔
         public static void Battle()
         {
+
             Random random = new Random();
 
             int playerHp = 40;
