@@ -7,6 +7,7 @@ using System.Xml;
 using Google.Apis.Services;
 using Google.Apis.Calendar.v3;
 using System.Security.Cryptography.X509Certificates;
+using System.Diagnostics;
 
 namespace InTheDeep
 {
@@ -20,6 +21,9 @@ namespace InTheDeep
             MainMenu myGame = new MainMenu();
             myGame.Start();
 
+            Stopwatch playTime = new Stopwatch();
+            playTime.Start();
+
             IntroArt.Intro();
 
             ResetColor();
@@ -31,19 +35,22 @@ namespace InTheDeep
             //Intro to adventure--- 程 程 程
             WriteLine("\t --While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located");
             WriteLine("in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try ");
-            Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? 'fight' or 'flee': ");
+            Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? fight 'f' or run 'r': ");
             string battle = Console.ReadLine();
 
 
-            if (battle == "fight")
+            if (battle == "f")
             {
+                //BattleMethod.Battle();
                 MonsterMethod.Monsters();
 
+                BattleMethod.Battle();
+
+                //WarriorClass warriorClass = new WarriorClass();
+
+                //warriorClass.Start();
+
                 ResetColor();
-
-                WarriorClass warriorClass = new WarriorClass();
-
-                warriorClass.Start();
             }
             else
             {
@@ -62,14 +69,14 @@ namespace InTheDeep
                 WriteLine("carefully laid and engraved marble slabs. You spot a dais at the center of the room ahead.");
                 WriteLine("Atop the dais sits a small glittering jade colored stone. You advance your trembling legs with renewed");
                 WriteLine("vigor! Your dreams are within reach. Within a moment you stand at the pedestal, do you take the stone from");
-                Console.WriteLine("it's stand? 'yes' or 'no'?: ");
+                Console.WriteLine("it's stand? Yes 'y' or No 'n'?: ");
 
                 string question = Console.ReadLine();
 
-                if (question == "yes")
+                if (question == "y")
                 {
                     BossMethod.Monsters();
-                    ResetColor();
+
                     WriteLine("\t --You hear a guttural bellow from behind you and turn to see a primordial beast!");
                     WriteLine("with writhing limbs covered in a black metallic sheen and hear a voice, seemingly from nowhere saying");
                     WriteLine("How dare thee mortal scum, so bold and brash to think ye worthy of such power! Prepare thyself for thy consequence...");
@@ -77,7 +84,7 @@ namespace InTheDeep
                     BossBattleMethod.BossBattle();
                     
                     ForegroundColor = ConsoleColor.Yellow;
-                    WriteLine("\t --You've slain the protector of the stone and now stand to gain immortality! All that is left is to get it home...");
+                    WriteLine("--You've slain the protector of the stone and now stand to gain immortality! All that is left is to get it home...");
                 }
 
                 else
@@ -89,17 +96,18 @@ namespace InTheDeep
             }
             else
             {
-                ForegroundColor = ConsoleColor.White;
+                ForegroundColor = ConsoleColor.Yellow;
                 WriteLine("\t --You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
             }
 
             //Clock method call--- 🕑🕑🕑
+            ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\t --To check your pocket watch press 'c': ");
             string watch = Console.ReadLine();
 
             if (watch == "c")
             {
-                ForegroundColor = ConsoleColor.Yellow;
+                ForegroundColor = ConsoleColor.Cyan;
                 ClockMethod.Clock();
             }
 
@@ -108,19 +116,33 @@ namespace InTheDeep
                 BattleMethod.Battle();
             }
 
-            Console.WriteLine("\t --To check the moon phase press 'c': ");
-            string moon = Console.ReadLine();
+            //ForegroundColor = ConsoleColor.DarkBlue;
+            //Console.WriteLine("\t --To check the moon phase press 'c': ");
+            //string moon = Console.ReadLine();
 
-            if (moon == "c")
-            {
-                ForegroundColor = ConsoleColor.Cyan;
-                CalendarApi.MoonCalendar();
-            }
+            //if (moon == "c")
+            //{
+            //    ForegroundColor = ConsoleColor.Cyan;
+            //    CalendarApi.MoonCalendar();
+            //}
 
-            else
+            //else
+            //{
+            //    BattleMethod.Battle();
+            //}
+
+            //Record for Best Time high score
+            playTime.Stop();
+            WriteLine(" Time elapsed: {0} ", playTime.Elapsed);
+
+            //Saving Best Time High Score
+            using (StreamWriter writer = new StreamWriter(@"C:\\HighScore\\InTheDeepScore.txt"))
             {
-                BattleMethod.Battle();
+                writer.WriteLine("Your fastest time for In The Deep was " + playTime.Elapsed);
             }
+            // Read a file  
+            string readText = File.ReadAllText(@"C:\\HighScore\\InTheDeepScore.txt");
+            Console.WriteLine(readText);
         }
     }
 }

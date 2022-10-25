@@ -11,7 +11,6 @@ namespace InTheDeep
             {
                 Random random = new Random();
 
-                int enemyHp = random.Next(14, 26);
                 int fight = random.Next(0, 2);
 
                 if (fight == 0)
@@ -50,7 +49,7 @@ namespace InTheDeep
                 }
                 else
                 {
-                    ForegroundColor = ConsoleColor.Yellow;
+                    ForegroundColor = ConsoleColor.Blue;
                     WriteLine(@"
                                                  '-.,;;:;,
                                                  _;\;|\;:;,
@@ -71,6 +70,7 @@ namespace InTheDeep
                                      `)_   ..-''`          `~~~~`    `~===~`
                                      <_.-`-._\");
                 }
+                ResetColor();
             }
         }
     }

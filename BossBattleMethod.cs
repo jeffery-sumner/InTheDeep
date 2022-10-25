@@ -1,4 +1,6 @@
-﻿namespace InTheDeep
+﻿using static System.Console;
+
+namespace InTheDeep
 {
     internal static class BossBattleMethod
     {
@@ -22,6 +24,7 @@
             {
                 //Fight Mechanic--- ⚔🛡👹
                 {
+                    ForegroundColor = ConsoleColor.Yellow;
                     // Player Turn--- 🛡🛡🛡
                     Console.WriteLine(" !!--@Player Turn--!! ");
                     Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
@@ -44,6 +47,7 @@
                     //Enemy Turn--- 👹👹👹
                     if (enemyHp > 0)
                     {
+                        ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(" !!--@Enemy Turn--!!  ");
                         Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
                         int enemyChoice = random.Next(0, 2);

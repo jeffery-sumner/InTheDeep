@@ -1,4 +1,6 @@
-﻿namespace InTheDeep
+﻿using static System.Console;
+
+namespace InTheDeep
 {
     public class BattleMethod
     {
@@ -12,7 +14,7 @@
 
             int enemyHp = random.Next(14, 26);
 
-            int playerAttack = random.Next(5, 8);
+            int playerAttack = random.Next(5, 12);
 
             int enemyAttack = random.Next(1, 7);
 
@@ -22,6 +24,7 @@
             {
                 //Fight Mechanic--- ⚔🛡👹
                 {
+                    ForegroundColor = ConsoleColor.Yellow;
                     // Player Turn--- 🛡🛡🛡
                     Console.WriteLine(" !!--@Player Turn--!! ");
                     Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
@@ -44,6 +47,7 @@
                     //Enemy Turn--- 👹👹👹
                     if (enemyHp > 0)
                     {
+                        ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(" !!--@Enemy Turn--!!  ");
                         Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
                         int enemyChoice = random.Next(0, 2);
@@ -62,14 +66,17 @@
                     }
                 }
             } while (playerHp > 0 && enemyHp > 0);
+            ResetColor();
 
             //Battle Summary--- 🕮🕮🕮🕮🕮
             if (playerHp > 0)
             {
+                ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("\t --Congratulations, you have slain your foe!");
             }
             else
             {
+                ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("\t --The enemy roars in victory and begins to feast on your flesh");
             }
         }

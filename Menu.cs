@@ -14,12 +14,15 @@ namespace InTheDeep
         private string[] Options;
         private string Prompt;
 
+        public string[] AttackOptions { get; }
+
         public Menu(string prompt, string[] options)
         {
             Prompt = prompt;
             Options = options;
             SelectedIndex = 0;
         }
+
 
         private void DisplayOptions()
         {
@@ -31,7 +34,7 @@ namespace InTheDeep
 
                 if (i == SelectedIndex)
                 {
-                    prefix = "*";
+                    prefix = ">";
                     ForegroundColor = ConsoleColor.Black;
                     BackgroundColor = ConsoleColor.White;
                 }
@@ -41,7 +44,7 @@ namespace InTheDeep
                     ForegroundColor = ConsoleColor.White;
                     BackgroundColor = ConsoleColor.Black;
                 }
-                WriteLine($"{prefix} << {currentOption} >>");
+                WriteLine($"{prefix} (_{currentOption}_)");
             }
             ResetColor();
         }
