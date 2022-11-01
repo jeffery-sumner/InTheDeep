@@ -40,15 +40,8 @@ namespace InTheDeep
 
             if (battle == "f")
             {
-                //BattleMethod.Battle();
                 MonsterMethod.Monsters();
-
                 BattleMethod.Battle();
-
-                //WarriorClass warriorClass = new WarriorClass();
-
-                //warriorClass.Start();
-
                 ResetColor();
             }
             else

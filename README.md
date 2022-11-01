@@ -8,7 +8,7 @@ This console application will utilize several features from the class project fe
 * A master loop that does not end until conditions are met
 * Calculate and display data based on external factors
 * Added background music method/class
-* Reading and writing to an external file
+* Writing to an external file
 * Connect to a third party API and read data into application
 
 *To run, all you need to do is hit play ;)

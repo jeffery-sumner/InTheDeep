@@ -9,7 +9,7 @@ using static System.Console;
 namespace InTheDeep
 {
 
-    internal class WarriorClass
+    internal class WarriorClass: BattleMethod
     {
         Random fightRandom = new Random();
         int playerHp = 60;
@@ -64,26 +64,6 @@ namespace InTheDeep
                     playerHp += healAmount;
                     WriteLine("\t --You heal " + healAmount + " health points!");
 
-                    //Enemy Turn--- 👹👹👹
-                    if (enemyHp > 0)
-                    {
-                        Console.WriteLine(" !!--@Enemy Turn--!!  ");
-                        Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
-                        int enemyChoice = fightRandom.Next(0, 2);
-
-                        if (enemyChoice == 0)
-                        {
-                            playerHp -= enemyAttack;
-                            Console.WriteLine("\t --The enemy slashes and deals " + enemyAttack + " damage!");
-                        }
-                        else
-                        {
-                            enemyHp += healAmount;
-                            Console.WriteLine("\t --The enemy restores " + healAmount + " health points!");
-                        }
-
-                    }
-
                 }
             } while (playerHp > 0 && enemyHp > 0);
         }
@@ -100,29 +80,10 @@ namespace InTheDeep
 
                     enemyHp -= playerAttack;
                     WriteLine("\t --You attack your enemy and deal " + playerAttack + " damage");
-
-
-                    //Enemy Turn--- 👹👹👹
-                    if (enemyHp > 0)
-                    {
-                        Console.WriteLine(" !!--@Enemy Turn--!!  ");
-                        Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
-                        int enemyChoice = fightRandom.Next(0, 2);
-
-                        if (enemyChoice == 0)
-                        {
-                            playerHp -= enemyAttack;
-                            Console.WriteLine("\t --The enemy slashes and deals " + enemyAttack + " damage!");
-                        }
-                        else
-                        {
-                            enemyHp += healAmount;
-                            Console.WriteLine("\t --The enemy restores " + healAmount + " health points!");
-                        }
-                    }
-
                 }
             } while (playerHp > 0 && enemyHp > 0);
+
+
 
             //Battle Summary--- 🕮🕮🕮🕮🕮
             if (playerHp > 0)
