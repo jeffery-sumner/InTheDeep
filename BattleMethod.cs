@@ -30,7 +30,7 @@ namespace InTheDeep
                     Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
                     Console.WriteLine("Enter 'a' to attack or 'h' to heal");
 
-                    string choice = Console.ReadLine();
+                    string choice = ReadLine();
 
                     if (choice == "a")
                     {

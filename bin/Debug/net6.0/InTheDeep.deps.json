@@ -8,89 +8,12 @@
     ".NETCoreApp,Version=v6.0": {
       "InTheDeep/1.0.0": {
         "dependencies": {
-          "Google.Apis": "1.57.0",
-          "Google.Apis.Calendar.v3": "1.57.0.2759",
-          "Google.Apis.NetworkServices.v1beta1": "1.57.0.2793",
-          "JsonSubTypes": "2.0.1",
           "Newtonsoft.Json": "13.0.1",
           "RestSharp": "108.0.2",
           "System.Windows.Extensions": "6.0.0"
         },
         "runtime": {
           "InTheDeep.dll": {}
-        }
-      },
-      "Google.Apis/1.57.0": {
-        "dependencies": {
-          "Google.Apis.Core": "1.57.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.dll": {
-            "assemblyVersion": "1.57.0.0",
-            "fileVersion": "1.57.0.0"
-          }
-        }
-      },
-      "Google.Apis.Auth/1.57.0": {
-        "dependencies": {
-          "Google.Apis": "1.57.0",
-          "Google.Apis.Core": "1.57.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.Auth.PlatformServices.dll": {
-            "assemblyVersion": "1.57.0.0",
-            "fileVersion": "1.57.0.0"
-          },
-          "lib/netstandard2.0/Google.Apis.Auth.dll": {
-            "assemblyVersion": "1.57.0.0",
-            "fileVersion": "1.57.0.0"
-          }
-        }
-      },
-      "Google.Apis.Calendar.v3/1.57.0.2759": {
-        "dependencies": {
-          "Google.Apis": "1.57.0",
-          "Google.Apis.Auth": "1.57.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.Calendar.v3.dll": {
-            "assemblyVersion": "1.57.0.2759",
-            "fileVersion": "1.57.0.2759"
-          }
-        }
-      },
-      "Google.Apis.Core/1.57.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.Core.dll": {
-            "assemblyVersion": "1.57.0.0",
-            "fileVersion": "1.57.0.0"
-          }
-        }
-      },
-      "Google.Apis.NetworkServices.v1beta1/1.57.0.2793": {
-        "dependencies": {
-          "Google.Apis": "1.57.0",
-          "Google.Apis.Auth": "1.57.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Google.Apis.NetworkServices.v1beta1.dll": {
-            "assemblyVersion": "1.57.0.2793",
-            "fileVersion": "1.57.0.2793"
-          }
-        }
-      },
-      "JsonSubTypes/2.0.1": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/JsonSubTypes.dll": {
-            "assemblyVersion": "2.0.1.0",
-            "fileVersion": "2.0.1.0"
-          }
         }
       },
       "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -176,48 +99,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Google.Apis/1.57.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-30V7T2G98HQjfI6y0AzBOXJUu7j7Trl1ZzH0e6DKmUaXNCvdMPwxApjBKESeTOkWjMdFRmkpAGyDEoxim+Xq1A==",
-      "path": "google.apis/1.57.0",
-      "hashPath": "google.apis.1.57.0.nupkg.sha512"
-    },
-    "Google.Apis.Auth/1.57.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-xNY9rprn3iih1H5dymbxxHeZggn4bMYKtYdwO3Yr+Cj06f6xrxnL0LqEi1bmG46LBY2FlVMy9NKIF99tZ6ZBZg==",
-      "path": "google.apis.auth/1.57.0",
-      "hashPath": "google.apis.auth.1.57.0.nupkg.sha512"
-    },
-    "Google.Apis.Calendar.v3/1.57.0.2759": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pKArc5Xz52croZuQ7sUDwiH6HT0AqheNGYfUqYqIXnPl90Bp5CSTsPMq5ZxX8rw7JeLXuoz234cEX0nTk63kiQ==",
-      "path": "google.apis.calendar.v3/1.57.0.2759",
-      "hashPath": "google.apis.calendar.v3.1.57.0.2759.nupkg.sha512"
-    },
-    "Google.Apis.Core/1.57.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5wuY88PewhfaWsk37EEHcwU6CFqxpaWMm20ogWLXmaCw8NbTlV/Lna0gjtr2jpTLgb3mtVa7RC1AG/mgi530SQ==",
-      "path": "google.apis.core/1.57.0",
-      "hashPath": "google.apis.core.1.57.0.nupkg.sha512"
-    },
-    "Google.Apis.NetworkServices.v1beta1/1.57.0.2793": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ENZQ1xrfWuBJr0MW59Af+vXOaWjuchbm3oJtEcgRXUxaOqsDHTs7L11gXOmHS+AW+lTyC6xx6xjQbrvsyihpNQ==",
-      "path": "google.apis.networkservices.v1beta1/1.57.0.2793",
-      "hashPath": "google.apis.networkservices.v1beta1.1.57.0.2793.nupkg.sha512"
-    },
-    "JsonSubTypes/2.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1Po+Ypf0SjCeEKx5+C89Nb5OgTcqNvfS3uTI46MUM+KEp6Rq/M0h+vVsTUt/6DFRwZMTpsAJM4yJrZmEObVANA==",
-      "path": "jsonsubtypes/2.0.1",
-      "hashPath": "jsonsubtypes.2.0.1.nupkg.sha512"
     },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",

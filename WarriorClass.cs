@@ -9,7 +9,7 @@ using static System.Console;
 namespace InTheDeep
 {
 
-    internal class WarriorClass: BattleMethod
+    public class WarriorClass
     {
         Random fightRandom = new Random();
         int playerHp = 60;
