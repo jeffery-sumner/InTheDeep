@@ -42,16 +42,20 @@ namespace InTheDeep
                 BattleMethod.Battle();
                 ResetColor();
             }
-            else
+            else if(battle == "r")
             {
                 FleeMethod.Flee();
+            }
+            else
+            {
+                WriteLine("'f' or 'r' a decision must be made adventurer!");
             }
 
 
             //Continue the Journey?--- 程 程 程
             WriteLine("\t --You manage to handle one situation, and now are torn between continuing the expedition, or heading home");
             Console.WriteLine("to the comfort of modern life. Which do you choose, to continue -'c'- or return -'r'-: ");
-            string journey = Console.ReadLine();
+            string journey = ReadLine();
 
             if (journey == "c")
             {
@@ -59,9 +63,9 @@ namespace InTheDeep
                 WriteLine("carefully laid and engraved marble slabs. You spot a dais at the center of the room ahead.");
                 WriteLine("Atop the dais sits a small glittering jade colored stone. You advance your trembling legs with renewed");
                 WriteLine("vigor! Your dreams are within reach. Within a moment you stand at the pedestal, do you take the stone from");
-                Console.WriteLine("it's stand? Yes -'y'- or No -'n'-?: ");
+                WriteLine("it's stand? Yes -'y'- or No -'n'-?: ");
 
-                string question = Console.ReadLine();
+                string question = ReadLine();
 
                 if (question == "y")
                 {
@@ -84,15 +88,19 @@ namespace InTheDeep
                     WriteLine("ye have sought this treasure, I deem ye wise enough to partake in it's use, if but for a moment. ");
                 }
             }
-            else
+            else if (journey == "r")
             {
                 ForegroundColor = ConsoleColor.Yellow;
                 WriteLine("\t --You decide to head home, you've had enough adventure to last a lifetime...'Never knowing what you missed'");
             }
+            else
+            {
+                WriteLine("'c' or 'r' a decision must be made adventurer!");
+            }
 
             //Clock method call--- 🕑🕑🕑
             ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("\t --To check your pocket watch press -'c'-: ");
+            WriteLine("\t --To check your pocket watch press -'c'-: ");
             string watch = ReadLine();
 
             if (watch == "c")
@@ -103,6 +111,7 @@ namespace InTheDeep
 
             else
             {
+                WriteLine("Time is critical to awareness! Behold.....danger in lingering!");
                 BattleMethod.Battle();
             }
 
@@ -119,6 +128,7 @@ namespace InTheDeep
             ResetColor();
 
             //Reading text file for High Score
+            ForegroundColor = ConsoleColor.Yellow;
             WriteLine("To check your current high score press 'c' ");
             string highScore = ReadLine();
 

@@ -21,8 +21,7 @@ namespace InTheDeep
             {
                 ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\t --To late to run now, stand and deliver!");
-                BattleMethod.
-                                Battle();
+                BattleMethod.Battle();
             }
 
             ResetColor();
