@@ -33,18 +33,25 @@ namespace InTheDeep
                     choice = Console.ReadLine();
                     if (choice == "a")
                     {
+                        WriteLine();
                         enemyHp -= playerAttack;
                         WriteLine("\t --You attack your enemy and deal " + playerAttack + " damage");
+                        WriteLine();
                     }
                     else if (choice == "h")
                     {
+                        WriteLine();
                         playerHp += healAmount;
                         WriteLine("\t --You heal " + healAmount + " health points!");
+                        WriteLine();
                     }
                     else
                     {
-                        WriteLine("You must choose 'a' or 'h' adventurer!");
-                        Battle();
+                        WriteLine();
+                        ForegroundColor = ConsoleColor.Cyan;
+                        WriteLine("You must choose 'a' or 'h' adventurer, delay is painful!");
+                        WriteLine();
+
                     }
 
                     //Enemy Turn--- 👹👹👹

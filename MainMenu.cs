@@ -76,14 +76,17 @@ namespace InTheDeep
                 case 0:
                     ForegroundColor = ConsoleColor.Red;
                     WriteLine("\t The Stout And Hearty Warrior!");
+                    WriteLine();
                     break;
                 case 1:
                     ForegroundColor = ConsoleColor.Blue;
                     WriteLine("\t The Wizened And Powerful Wizard!");
+                    WriteLine();
                     break;
                 case 2:
                     ForegroundColor = ConsoleColor.Green;
                     WriteLine("\t The Cunning And Swift Thief!");
+                    WriteLine();
                     break;
             }
             ReadLine();

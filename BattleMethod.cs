@@ -49,7 +49,7 @@ namespace InTheDeep
                     {
                         WriteLine();
                         ForegroundColor = ConsoleColor.Cyan;
-                        WriteLine("You must choose 'a' or 'h' adventurer!");
+                        WriteLine("You must choose 'a' or 'h' adventurer, delay is painful!");
                         WriteLine();
 
                     }

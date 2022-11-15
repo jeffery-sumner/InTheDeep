@@ -29,32 +29,34 @@ namespace InTheDeep
             ResetColor();
 
             //Intro to adventure--- 程 程 程
-            WriteLine("\t --While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located");
-            WriteLine("in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try ");
-            Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? Fight -'f'- or Run -'r'-: ");
-            string battle = Console.ReadLine();
 
-            
 
-            if (battle == "f")
-            {
-                MonsterMethod.Monsters();
-                BattleMethod.Battle();
-                ResetColor();
-            }
-            else if (battle == "r")
-            {
-                FleeMethod.Flee();
-            }
-            else
-            {
-                WriteLine("'f' or 'r' a decision must be made adventurer!");
+                WriteLine("\t --While on a journey to find the Gintomony stone of legends past you have discovered a secret passage located");
+                WriteLine("in mammoth cave. After hours of exploration you stumble across a creature of unimaginable horror, do you try ");
+                Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? Fight -'f'- or Run -'r'-: ");
+                string battle = Console.ReadLine();
 
-            }
+
+
+                if (battle == "f")
+                {
+                    MonsterMethod.Monsters();
+                    BattleMethod.Battle();
+                    ResetColor();
+                }
+                else if (battle == "r")
+                {
+                    FleeMethod.Flee();
+                }
+                else
+                {
+                    WriteLine("You blacked out! Your palms and pickax are covered in blood and a heavy guilt settles onto your shoulders...");
+                    ConsoleUtils.WaitForKeyPress();
+                }
 
 
             //Continue the Journey?--- 程 程 程
-            WriteLine("\t --You manage to handle one situation, and now are torn between continuing the expedition, or heading home");
+            WriteLine("\t --You narrowly escaped one situation, and now are torn between continuing the expedition, or heading home");
             Console.WriteLine("to the comfort of modern life. Which do you choose, to continue -'c'- or return -'r'-: ");
             string journey = ReadLine();
 
@@ -96,11 +98,13 @@ namespace InTheDeep
             }
             else
             {
-                WriteLine("'c' or 'r' a decision must be made adventurer!");
+                WriteLine("Your legs carry you back to the surface, where you regain consciousness as daylight warms your cheeks." +
+                          " You turn to look back at the cave, but all that can be seen is a cliff where once was adventure and riches untold...");
             }
 
             //Clock method call--- 🕑🕑🕑
             ForegroundColor = ConsoleColor.Yellow;
+            WriteLine("\tThe watch you carry feels oddly warm");
             WriteLine("\t --To check your pocket watch press -'c'-: ");
             string watch = ReadLine();
 
