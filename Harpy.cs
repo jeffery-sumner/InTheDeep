@@ -8,7 +8,7 @@ using static System.Console;
 
 namespace InTheDeep
 {
-    class Harpy : Character
+    internal class Harpy : Character
     {
         public Harpy(string name, int health, ConsoleColor color)
             : base(name, health, color, ArtAssets.Harpy)

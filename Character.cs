@@ -8,7 +8,7 @@ using static System.Console;
 
 namespace InTheDeep
 {
-    internal class Character
+    public class Character
     {
         public int MaxHealth { get; protected set; }
         public string Name { get; protected set; }

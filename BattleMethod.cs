@@ -66,11 +66,13 @@ namespace InTheDeep
                         {
                             playerHp -= enemyAttack;
                             WriteLine("\t --The enemy slashes and deals " + enemyAttack + " damage!");
+                            WriteLine();
                         }
                         else
                         {
                             enemyHp += healAmount;
                             WriteLine("\t --The enemy restores " + healAmount + " health points!");
+                            WriteLine();
                         }
 
                     }

@@ -40,9 +40,9 @@ namespace InTheDeep
 
                 if (battle == "f")
                 {
-                    MonsterMethod.Monsters();
-                    BattleMethod.Battle();
-                    ResetColor();
+                MonsterMethod.Monsters();
+                BattleMethod.Battle();
+                ResetColor();
                 }
                 else if (battle == "r")
                 {
@@ -98,8 +98,9 @@ namespace InTheDeep
             }
             else
             {
-                WriteLine("Your legs carry you back to the surface, where you regain consciousness as daylight warms your cheeks." +
-                          " You turn to look back at the cave, but all that can be seen is a cliff where once was adventure and riches untold...");
+                WriteLine("That was not an option. You must be delerious..." +
+                          "Your legs carry you back to the surface, where you regain consciousness as daylight warms your cheeks." +
+                          " You turn to look back at the cave, but all that can be seen is a cliff where once was \nadventure and riches untold...");
             }
 
             //Clock method call--- 🕑🕑🕑
