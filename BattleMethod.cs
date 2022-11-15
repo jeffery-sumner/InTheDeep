@@ -10,75 +10,83 @@ namespace InTheDeep
 
             Random random = new Random();
 
-            int playerHp = 40;
+            int playerHp = 45;
 
-            int enemyHp = random.Next(14, 26);
+            int enemyHp = random.Next(35, 60);
 
-            int playerAttack = random.Next(5, 12);
+            int playerAttack = random.Next(5, 8);
 
-            int enemyAttack = random.Next(1, 7);
+            int enemyAttack = random.Next(2, 7);
 
             int healAmount = random.Next(5, 7);
-
+            string choice = null;
             do
             {
                 //Fight Mechanic--- ⚔🛡👹
                 {
                     ForegroundColor = ConsoleColor.Yellow;
                     // Player Turn--- 🛡🛡🛡
-                    Console.WriteLine(" !!--@Player Turn--!! ");
-                    Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
-                    Console.WriteLine("Enter 'a' to attack or 'h' to heal");
+                    WriteLine(" !!--@Player Turn--!! ");
+                    WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
+                    WriteLine("Enter 'a' to attack or 'h' to heal");
 
-                    string choice = ReadLine();
-
+                    choice = Console.ReadLine();
                     if (choice == "a")
                     {
+                        WriteLine();
                         enemyHp -= playerAttack;
-                        Console.WriteLine("\t --You attack your enemy and deal " + playerAttack + " damage");
+                        WriteLine("\t --You attack your enemy and deal " + playerAttack + " damage");
+                        WriteLine();
                     }
-                    if (choice == "h")
+                    else if (choice == "h")
                     {
+                        WriteLine();
                         playerHp += healAmount;
-                        Console.WriteLine("\t --You heal " + healAmount + " health points!");
+                        WriteLine("\t --You heal " + healAmount + " health points!");
+                        WriteLine();
                     }
+                    else
+                    {
+                        WriteLine();
+                        ForegroundColor = ConsoleColor.Cyan;
+                        WriteLine("You must choose 'a' or 'h' adventurer!");
+                        WriteLine();
 
+                    }
 
                     //Enemy Turn--- 👹👹👹
                     if (enemyHp > 0)
                     {
                         ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(" !!--@Enemy Turn--!!  ");
-                        Console.WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
+                        WriteLine(" !!--@Enemy Turn--!!  ");
+                        WriteLine("Player Hp = " + playerHp + ". Enemy Hp = " + enemyHp);
                         int enemyChoice = random.Next(0, 2);
 
                         if (enemyChoice == 0)
                         {
                             playerHp -= enemyAttack;
-                            Console.WriteLine("\t --The enemy slashes and deals " + enemyAttack + " damage!");
+                            WriteLine("\t --The enemy slashes and deals " + enemyAttack + " damage!");
                         }
                         else
                         {
                             enemyHp += healAmount;
-                            Console.WriteLine("\t --The enemy restores " + healAmount + " health points!");
+                            WriteLine("\t --The enemy restores " + healAmount + " health points!");
                         }
 
                     }
                 }
             } while (playerHp > 0 && enemyHp > 0);
-            ResetColor();
 
             //Battle Summary--- 🕮🕮🕮🕮🕮
             if (playerHp > 0)
             {
-                ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("\t --Congratulations, you have slain your foe!");
+                WriteLine("\t --Congratulations, you have slain your foe!");
             }
             else
             {
-                ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("\t --The enemy roars in victory and begins to feast on your flesh");
+                WriteLine("\t --The enemy roars in victory and begins to feast on your flesh");
             }
         }
+
     }
 }

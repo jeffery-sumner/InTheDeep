@@ -11,7 +11,6 @@ namespace InTheDeep
 {
     internal class Journey
     {
-
         public static void Adventure()
         {
             Title = "In The Deep";
@@ -35,6 +34,7 @@ namespace InTheDeep
             Console.WriteLine("and sneak past or surprise it with the steel of a pickax you carry? Fight -'f'- or Run -'r'-: ");
             string battle = Console.ReadLine();
 
+            
 
             if (battle == "f")
             {
@@ -42,13 +42,14 @@ namespace InTheDeep
                 BattleMethod.Battle();
                 ResetColor();
             }
-            else if(battle == "r")
+            else if (battle == "r")
             {
                 FleeMethod.Flee();
             }
             else
             {
                 WriteLine("'f' or 'r' a decision must be made adventurer!");
+
             }
 
 
@@ -121,6 +122,7 @@ namespace InTheDeep
             WriteLine(" Total play time for In The Deep was : {0} ", playTime.Elapsed);
 
             //Writing the text file Best Time High Score
+            var pathToJson = Directory.GetCurrentDirectory() + "C:\\HighScore\\InTheDeepScore.txt";
             using (StreamWriter writer = new StreamWriter(@"C:\\HighScore\\InTheDeepScore.txt"))
             {
                 writer.WriteLine(playTime.Elapsed);
@@ -141,7 +143,9 @@ namespace InTheDeep
 
             WriteLine("Press any key to exit...");
             ReadKey();
-        }
-
+        }      
+        
     }
 }
+
+

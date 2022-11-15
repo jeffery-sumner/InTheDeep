@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using System.Media;
-using static System.Console;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
 using System.Xml;
@@ -12,7 +11,7 @@ using static System.Net.Mime.MediaTypeNames;
 namespace InTheDeep
 {
     partial class Program
-    {
+    {      
         static void Main(string[] args)
         {
             do
@@ -20,7 +19,6 @@ namespace InTheDeep
                 Journey.Adventure();
             }
             while (true);
-
         }
 
     }

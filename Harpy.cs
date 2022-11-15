@@ -10,17 +10,10 @@ namespace InTheDeep
 {
     class Harpy : Character
     {
-        private Item CurrentItem;
-
         public Harpy(string name, int health, ConsoleColor color)
             : base(name, health, color, ArtAssets.Harpy)
         {
 
-        }
-
-        public void PickUpItem(Item item)
-        {
-            CurrentItem = item;
         }
 
         public void Screech()
@@ -36,20 +29,24 @@ namespace InTheDeep
             BackgroundColor = Color;
             Write($" {Name} ");
             ResetColor();
-            WriteLine($"{Name} rends your flesh with talons!");
-
-            if (CurrentItem != null)
-            {
-                WriteLine($"You notice it has {CurrentItem.Name}.");
-            }
+            WriteLine($"{Name} rends your flesh with it's talons!");
         }
 
-        public void Gust()
+
+        public override void Fight(Character otherCharacter)
         {
-            BackgroundColor = Color;
-            Write($" {Name} ");
+            ForegroundColor = Color;
+            int randPercent = random.Next(1, 101);
+            if (randPercent <= 50)
+            {
+                WriteLine("hits for 5 damage!");
+                otherCharacter.TakeDamage(5);
+            }
+            else
+            {
+                WriteLine("misses...");
+            }
             ResetColor();
-            WriteLine($"{Name} provokes a gale wind that knocks you into a cave wall!");
         }
     }
 }

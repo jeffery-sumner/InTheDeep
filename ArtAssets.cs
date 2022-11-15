@@ -8,7 +8,10 @@ namespace InTheDeep
 {
     static class ArtAssets
     {
-        public static string Player = @"";
+        public static string Player = @"        /
+                                          (o)  /
+                                         ./|\.%
+                                         _/ \_";
 
         public static string Harpy = @"            
                                             ,                                        ,
