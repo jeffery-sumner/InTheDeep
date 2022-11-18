@@ -106,7 +106,7 @@ namespace InTheDeep
             //Clock method call--- 🕑🕑🕑
             ForegroundColor = ConsoleColor.Yellow;
             WriteLine("\tThe watch you carry feels oddly warm");
-            WriteLine("\t --To check your pocket watch press -'c'-: ");
+            WriteLine("\t --To check your pocket watch press -'c'- otherwise any key will do...: ");
             string watch = ReadLine();
 
             if (watch == "c")
@@ -118,6 +118,7 @@ namespace InTheDeep
             else
             {
                 WriteLine("Time is critical to awareness! Behold.....danger in lingering!");
+                MonsterMethod.Monsters();
                 BattleMethod.Battle();
             }
 

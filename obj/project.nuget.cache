@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cKOX3ERX3cqeYF1DUq/atSyOChO3m2MM117Gns5ViSoX8CoHygIRmDzQ9ycLHiXO+fSJdInn/cNQgs5Edo426A==",
+  "dgSpecHash": "58SZlIxplQgbzopd3hhXWNFjwa0G8SiAYRUOFnN+JCJcvO/7NtIdThcNNnD+jPl52GFarFl9bLhlJLL/HUcYlg==",
   "success": true,
   "projectFilePath": "C:\\Users\\nick_\\OneDrive\\InTheDeep\\InTheDeep.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\nick_\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\nick_\\.nuget\\packages\\restsharp\\108.0.2\\restsharp.108.0.2.nupkg.sha512",
     "C:\\Users\\nick_\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\nick_\\.nuget\\packages\\system.resources.extensions\\7.0.0\\system.resources.extensions.7.0.0.nupkg.sha512",
     "C:\\Users\\nick_\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
   "logs": []
