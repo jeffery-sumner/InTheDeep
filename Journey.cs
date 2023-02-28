@@ -103,49 +103,49 @@ namespace InTheDeep
                           " You turn to look back at the cave, but all that can be seen is a cliff where once was \nadventure and riches untold...");
             }
 
-            //Clock method call--- 🕑🕑🕑
-            ForegroundColor = ConsoleColor.Yellow;
-            WriteLine("\tThe watch you carry feels oddly warm");
-            WriteLine("\t --To check your pocket watch press -'c'- otherwise any key will do...: ");
-            string watch = ReadLine();
+            ////Clock method call--- 🕑🕑🕑
+            //ForegroundColor = ConsoleColor.Yellow;
+            //WriteLine("\tThe watch you carry feels oddly warm");
+            //WriteLine("\t --To check your pocket watch press -'c'- otherwise any key will do...: ");
+            //string watch = ReadLine();
 
-            if (watch == "c")
-            {
-                ForegroundColor = ConsoleColor.Cyan;
-                ClockMethod.Clock();
-            }
+            //if (watch == "c")
+            //{
+            //    ForegroundColor = ConsoleColor.Cyan;
+            //    ClockMethod.Clock();
+            //}
 
-            else
-            {
-                WriteLine("Time is critical to awareness! Behold.....danger in lingering!");
-                MonsterMethod.Monsters();
-                BattleMethod.Battle();
-            }
+            //else
+            //{
+            //    WriteLine("Time is critical to awareness! Behold.....danger in lingering!");
+            //    MonsterMethod.Monsters();
+            //    BattleMethod.Battle();
+            //}
 
 
-            //Record for current best time
-            playTime.Stop();
-            WriteLine(" Total play time for In The Deep was : {0} ", playTime.Elapsed);
+            ////Record for current best time
+            //playTime.Stop();
+            //WriteLine(" Total play time for In The Deep was : {0} ", playTime.Elapsed);
 
-            //Writing the text file Best Time High Score
-            var pathToJson = Directory.GetCurrentDirectory() + "C:\\HighScore\\InTheDeepScore.txt";
-            using (StreamWriter writer = new StreamWriter(@"C:\\HighScore\\InTheDeepScore.txt"))
-            {
-                writer.WriteLine(playTime.Elapsed);
-            }
-            ResetColor();
+            ////Writing the text file Best Time High Score
+            //var pathToJson = Directory.GetCurrentDirectory() + "C:\\HighScore\\InTheDeepScore.txt";
+            //using (StreamWriter writer = new StreamWriter(@"C:\\HighScore\\InTheDeepScore.txt"))
+            //{
+            //    writer.WriteLine(playTime.Elapsed);
+            //}
+            //ResetColor();
 
-            //Reading text file for High Score
-            ForegroundColor = ConsoleColor.Yellow;
-            WriteLine("To check your current high score press 'c' ");
-            string highScore = ReadLine();
+            ////Reading text file for High Score
+            //ForegroundColor = ConsoleColor.Yellow;
+            //WriteLine("To check your current high score press 'c' ");
+            //string highScore = ReadLine();
 
-            if (highScore == "c")
-            {
-                ForegroundColor = ConsoleColor.Cyan;
-                highScores.HighScores();
-            }
-            ResetColor();
+            //if (highScore == "c")
+            //{
+            //    ForegroundColor = ConsoleColor.Cyan;
+            //    highScores.HighScores();
+            //}
+            //ResetColor();
 
             WriteLine("Press any key to exit...");
             ReadKey();
